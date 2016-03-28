@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Saffron</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    .idea_files {
+      text-align: center;
+    }
+
+    .drop_files .file-droppa-container,
+    .idea_files .file-droppa-container {
+      width: auto;
+    }
+
+    .drop_files .file-droppa-btns,
+    .idea_files .file-droppa-btns {
+      display: none;
+    }
+
+    .file-droppa-document-image,
+    .file-droppa-image {
+      height: 220px;
+      border: 3px solid #BBB5DC;
+      background: #F2EADF url(/assets/img/picture.png) no-repeat center;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .file-droppa-image.has-image {
+      display: inline-flex;
+      position: relative;
+    }
+
+    .file-droppa-document-image img,
+    .file-droppa-image img {
+      max-width: 100%;
+      max-height: 100%;
+      height: auto;
+      width: auto;
+    }
+
+    .file-droppa-image .delete-image:hover {
+      opacity: .5;
+    }
+
+    .profile-address .dropdown-menu {
+      border-radius: 0;
+      right: 15px;
+      padding: 0;
+    }
+
+    .profile-address .dropdown-menu .dropdown-item {
+      white-space: normal;
+      font-size: 14px;
+      line-height: 18px;
+      padding: 5px 10px;
+      color: rgba(31, 30, 170, 0.9);;
+    }
+
+    .profile-address .dropdown-item.active {
+      background-color: #4342E6;
+      color: #fff;
+    }
+
+    @media only screen and (max-width: 480px) {
+      .file-droppa-document-image,
+      .file-droppa-image {
+        height: 135px;
+      }
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.4/jszip.js"></script>
+
+</head>
+
+<body>
+  Loading...
+</body>
+
+</html>

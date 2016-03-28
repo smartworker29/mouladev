@@ -1,0 +1,258 @@
+/* You can add global styles to this file, and also import other style files */
+
+$primary-color: #4342e6;
+$bg-color: #4342e6;
+$bg-second-color: #450da6;
+
+
+/*Fonts*/
+
+@font-face {
+  font-family: ProximaNova;
+  src: url(/assets/fonts/ProximaNova-Bold.otf);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: ProximaNova;
+  src: url(/assets/fonts/ProximaNova-Light.otf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: ProximaNova;
+  src: url(/assets/fonts/ProximaNova-Regular.otf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: ProximaNova;
+  src: url(/assets/fonts/ProximaNova-Semibold.otf);
+  font-weight: 500;
+}
+
+
+.max-w-365{
+  max-width: 365px;
+}
+
+
+.c-white {
+  color: #FFF;
+}
+
+/*Global*/
+html, body {
+  height: 100%;
+  min-height: 400px;
+
+  font-family: ProximaNova, sans-serif;
+  font-weight: 400;
+}
+
+input, select, textarea, optgroup {
+  font-family: ProximaNova, sans-serif;
+  font-weight: 400;
+}
+
+.container-fluid {
+  width: 100%;
+  height: 100%;
+  padding: 0 0;
+  margin: 0 auto;
+
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.font-nova-bold {
+  font-family: ProximaNova, sans-serif;
+  font-weight: 600;
+}
+
+.font-nova-light {
+  font-family: ProximaNova, sans-serif;
+  font-weight: 300;
+}
+
+div.link {
+  cursor: pointer;
+}
+
+.bg-gradient {
+  background: $bg-color; /* Old browsers */
+  background: -webkit-linear-gradient(180deg, $bg-second-color 0%, $bg-color 100%); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(180deg, $bg-second-color 0%, $bg-color 100%); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(180deg, $bg-second-color 0%, $bg-color 100%); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(180deg, $bg-second-color 0%, $bg-color 100%); /* Standard syntax */
+}
+
+.bg-image {
+  background-image: url('/assets/img/circle1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.container-main {
+  height: 100%;
+}
+
+.container-border {
+  border: 1px solid #cccccc;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  right: 30px;
+  bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+textarea.rule {
+  display: block;
+  border: none;
+  color: #4342e6;
+  outline: none;
+  width: 100%;
+}
+
+textarea.rule:focus {
+  background: #eee;
+}
+
+textarea.rule:blur {
+  background: white;
+}
+
+@media (max-width: 767px) {
+  .container-border{
+    left: 15px; right: 15px;
+    top: 15px; bottom: 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container-border{
+    border: 1px solid #cccccc;
+    top: 15px; bottom: 15px;
+    left: 15px; right: 15px;
+  }
+}
+
+.hero-title {
+  color: #ffffff;
+  font-size: 54px;
+  letter-spacing: 3px;
+}
+
+.hero-subtitle {
+  color: #f5f5f5;
+  font-size: 27px;
+  letter-spacing: 1px;
+  opacity: 0.75;
+}
+
+app-navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.popover {
+  color: #4342e6;
+  font-family: ProximaNova;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 0;
+  max-width: 332px;
+
+  .message {
+    margin-bottom: 15px;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    .btn {
+      margin-left: 18px;
+    }
+  }
+}
+
+.popover-content {
+  padding: 16px 15px;
+}
+
+@media screen and (max-width: 600px) {
+  .popover{
+    left: 0 !important;
+    top: 0 !important;
+    width: 100%;
+  }
+}
+
+/* Buttons */
+
+.btn {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.btn-ok {
+  background-color: #00d8c9;
+}
+
+.btn-cancel {
+  background-color: #cccccc;
+}
+
+.back-button {
+  color: $primary-color;
+  font-size: 18px;
+  line-height: 22px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: .8;
+  }
+}
+
+.back-button:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 15px;
+  height: 15px;
+  margin-right: 12px;
+  background: url(/assets/img/idea/back_button_icon.png);
+}
+
+/* Modals */
+
+.modal-content {
+  border: none;
+  border-radius: 0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+}
+
+.modal-header {
+  border: none;
+}
+
+.modal-footer {
+  border: none;
+}
+
+.fade.in {
+  opacity: 1;
+}
