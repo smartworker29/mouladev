@@ -1,0 +1,101 @@
+<div class="container-fluid bg-gradient">
+  <div *ngIf="!callback" class="container-main bg-image">
+    <div class="container-border">
+      <app-navbar [isLoggedIn]="false" class="mobile-hidden"></app-navbar>
+      <div class="login-box container">
+        <div class="close-btn hidden-sm-up" [routerLink]="['/']"></div>
+        <div class="col-12 col-lg-6 column pull-left">
+          <div class="container-title">Sign Up</div>
+          <div>
+            <form novalidate [formGroup]="signupForm" (ngSubmit)="registerUser()">
+              <div class="form-group form-inputs">
+                <div class="row">
+                  <div class="col-5">
+                    <select class="form-control" formControlName="method" (change)="removeErrors($event.target.value)">
+                      <option value="email">Email</option>
+                      <option value="phone">Phone</option>
+                    </select>
+                  </div>
+                  <div class="col-7">
+                    <input *ngIf="signupForm.value.method === 'email'"
+                           class="form-control"
+                           placeholder="Email"
+                           type="email"
+                           required
+                           pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                           formControlName="email" />
+                    <app-phone-input *ngIf="signupForm.value.method === 'phone'"
+                                     formControlName="phone"></app-phone-input>
+                  </div>
+                </div>
+                <div class="row" *ngIf="signupForm.value.method === 'email'">
+                  <div class="col-12 col-sm-5 col-md-5 col-lg-12">
+                    <input placeholder="Password" type="password" class="form-control" formControlName="password" required minlength="6">
+                  </div>
+                </div>
+                <div class="row" *ngIf="showOtpInput && signupForm.value.method === 'phone'">
+                  <div class="col-12 col-sm-5 col-md-7">
+                    <app-otp-input segmentLength="2"
+                                   segments="3"
+                                   formControlName="otp"></app-otp-input>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-6 col-md-7 otp-legend-container">
+                    <div class="otp-legend" *ngIf="showOtpInput && signupForm.value.method === 'phone'">
+                      Enter the code we texted you. Want Us to <a (click)="sendCode()" href="javascript:void(0)">send it again</a>?
+                    </div>
+                  </div>
+                  <div class="col-6 col-md-12">
+                    <div class="btn-border pull-right" *ngIf="showJoinButton">
+                      <button type="submit" class="enter-btn">Join</button>
+                    </div>
+                    <div class="btn-border pull-right" *ngIf="!showOtpInput && signupForm.value.method === 'phone'">
+                      <button type="button" class="enter-btn pull-right"
+                              (click)="sendCode()"
+                              [disabled]="!signupForm.valid">
+                              Send code
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-12">
+                      <app-validation-message [messages]="messages" [fields]="fields"></app-validation-message>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="vertical-separator">
+          <div class="line left"></div>
+          <div class="text">or</div>
+          <div class="line right"></div>
+        </div>
+
+        <div class="col-12 col-lg-6 pull-left column social-wrapper">
+          <div class="container-title">Sign In with</div>
+          <app-login-social></app-login-social>
+        </div>
+      </div>
+      <div class="container-other-buttons row hidden-sm-down">
+        <div class="link col-5 text-left" [routerLink]="['/']"><i class="fa fa-arrow-left"></i>Back</div>
+        <div class="link col-7 text-right" [routerLink]="['/login']">Have an account?</div>
+      </div>
+    </div>
+    <div class="privacy-policy">By tapping "Join" you are agreeing to the <span class="c-white" (click)="openTermsOfUseModal()">Terms of use</span> and <span class="c-white text_underline" (click)="openPrivacyPolicyModal()">Privacy policy</span></div>
+  </div>
+  <div *ngIf="callback" class="container-main bg-image">
+    <div class="container-title text-center">Retrieving login information...</div>
+  </div>
+</div>
+

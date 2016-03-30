@@ -1,0 +1,66 @@
+@media (min-width: 500px) {
+  .container-title {
+    font-size: 2em;
+    color: #fff
+  }
+
+  .btn {
+    min-width: 140px;
+    height: 40px;
+    margin: 10px;
+  }
+
+  input {
+    width: 250px;
+    height: 40px;
+    margin: 10px;
+  }
+
+  div.separator {
+    background-color: rgba(255, 255, 255, 0.25);
+    width: 400px;
+    height: 1px;
+    margin: 20px;
+  }
+
+  .container-other-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+}
+
+.container-main {
+  min-width: 100%;
+  min-height: 100%;
+
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-gradient {
+  background: #3a22dd; /* Old browsers */
+  background: -webkit-linear-gradient(#340095, #3a22dd); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#340095, #3a22dd); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#340095, #3a22dd); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#340095,#3a22dd); /* Standard syntax */
+}
+
+.bg-image {
+  background-image: url('/assets/img/circle1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.container-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
