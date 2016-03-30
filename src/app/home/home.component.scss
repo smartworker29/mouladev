@@ -1,0 +1,233 @@
+$btns-clearance: 30px;
+$sign-in-btn-size: 92px;
+
+$join-btn-color: #00d8c9;
+$sign-in-btn-color: #679bf9;
+
+.container-main {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 30px;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container-border {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.container-buttons {
+  padding-left: 65px;
+}
+
+.home-page-btn {
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+  transition: .2s ease-in-out;
+  cursor: pointer;
+  color: #F9F5F0;
+  font-size: 30px;
+  line-height: 37px;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  border: 3px solid $join-btn-color;
+
+  &.join-btn {
+    border-color: #6A9BF5;
+
+    .button-inner {
+      background-color: #6A9BF5;
+    }
+  }
+
+  &.sign-in-btn {
+    border-color: #FF6C24;
+    margin-left: 46px;
+
+    .button-inner{
+      background-color: #FF6C24;
+    }
+  }
+
+  &.sign-in-later-btn {
+    .button-inner {
+      padding-top: 10px;
+    }
+  }
+
+  .button-inner {
+    width: 158px;
+    height: 158px;
+    background-color: $join-btn-color;
+    border-radius: 50%;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.home-page-btn + .home-page-btn {
+  margin-top: 45px;
+}
+
+.home-page-btn:hover {
+  -webkit-filter:  blur(0px);
+  filter:  blur(0px);
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+
+  transition: .2s ease-in-out;
+}
+
+
+@media screen and (min-width: 550px) and (max-width: 992px) {
+  .container-logo {
+    height: 40px;
+  }
+  .container-border {
+    flex-direction: column;
+    top: 20px; bottom: 20px; left: 20px; right: 20px;
+    .container-title{
+      .hero-title{
+        font-size: 54px;
+        text-align: center;
+      }
+      .hero-subtitle{
+        text-align: center;
+        font-size: 27px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  .container-buttons {
+    display: block;
+    padding-left: 0;
+  }
+
+  .home-page-btn + .home-page-btn {
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+
+  .home-page-btn{
+    display: inline-flex;
+    font-size: 20px;
+    width: 150px;
+    height: 150px;
+    &.sign-in-later-btn{
+      .button-inner {
+        padding-top: 0;
+      }
+    }
+    .button-inner{
+      width: 138px;
+      height: 138px;
+    }
+  }
+
+  .container-footer {
+    color: #fff;
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 549px) {
+  .container-border{
+    flex-direction: column;
+    top: 15px; bottom: 15px; left: 15px; right: 15px;
+    .container-title{
+      .hero-title{
+        font-size: 28px;
+        text-align: center;
+      }
+      .hero-subtitle{
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .container-buttons {
+    padding-left: 0;
+  }
+
+  .home-page-btn {
+    font-size: 18px;
+    width: 100px;
+    height: 100px;
+
+    &.sign-in-btn {
+      margin-left: 0;
+    }
+
+    &.sign-in-later-btn {
+      line-height: 21px;
+    }
+
+    .button-inner {
+      width: 88px;
+      height: 88px;
+    }
+  }
+
+  .home-page-btn + .home-page-btn {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 549px) {
+  .container-border{
+    left: 15px; right: 15px;
+  }
+
+  .bg-image {
+    background-image: url('/assets/img/circle_flip.png');
+    background-size: contain;
+    background-position: 0 60%;
+  }
+}
+
+//for landscape mode in smart phone devices
+@media screen and (max-width:768px) and (orientation:landscape) {
+  .container-border{
+    .container-title{
+      .hero-title{
+        font-size: 25px;
+        text-align: center;
+      }
+      .hero-subtitle{
+        text-align: center;
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  .home-page-btn {
+    width: 90px;
+    height: 90px;
+    font-size: 12px;
+
+    .button-inner {
+      width: 78px;
+      height: 78px;
+    }
+  }
+}
+
